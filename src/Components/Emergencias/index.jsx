@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CallButton } from "../CallButton";
 import { Contacts, Main } from "./style";
 
 export const EmergenciasForm = () => {
@@ -42,6 +43,7 @@ export const EmergenciasForm = () => {
                 <h5>Telefone</h5>
                 <li>{e.telefone}</li>
                 </div>
+                <CallButton phone={e.telefone}/>
               </Contacts>
             </>
           ))}
