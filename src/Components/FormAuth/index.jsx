@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useAuth } from "../App";
+import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const FormAuth = (props) => {
   const loginMock = {
@@ -7,6 +10,7 @@ export const FormAuth = (props) => {
     senha: "1234",
   };
   const [user, setUser] = useState({ email: "", password: "" });
+  const { handleLogin, handleLogout } = useAuth();
   const navigate = useNavigate();
 
   const doLogin = (event) => {
@@ -16,7 +20,11 @@ export const FormAuth = (props) => {
       user.password === loginMock.senha &&
       props.type === "login"
     ) {
+      handleLogin();
       navigate("/controles");
+    } else {
+      toast.error('Dados incorretos')
+      handleLogout();
     }
   };
   const changeHandler =
@@ -30,6 +38,7 @@ export const FormAuth = (props) => {
 
   return (
     <>
+    <ToastContainer/>
       <form onSubmit={doLogin}>
         {props.values.map((value) => (
           <input
@@ -42,9 +51,9 @@ export const FormAuth = (props) => {
         <button type="submit">Enviar</button>
       </form>
       {props.type === "login" ? (
-        <a href="/cadastrar">Não é cadastrado? Clique aqui</a>
+        <Link to="/cadastrar">Não é cadastrado? Clique aqui</Link>
       ) : (
-        <a href="/entrar">Já é cadastrado? Clique aqui</a>
+        <Link to="/entrar">Já é cadastrado? Clique aqui</Link>
       )}
     </>
   );
