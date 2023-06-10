@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { CadastrarPage } from "../Pages/Cadastrar";
+import { CamerasComponents } from "../Pages/Cameras";
 import { Controles } from "../Pages/Controles";
 import { Emergencias } from "../Pages/Emergencias";
 import { Home } from "../Pages/Home";
@@ -32,6 +33,7 @@ function App() {
             <Route path="/lembretes" element={<Lembretes />} />
             <Route path="/listas" element={<Listas />} />
             <Route path="/emergencias" element={<Emergencias />} />
+            <Route path="/controles-lampada" element={<CamerasComponents/>}/>
           </>
         ) : (
           <>
