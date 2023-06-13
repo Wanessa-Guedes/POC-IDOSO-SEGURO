@@ -1,37 +1,38 @@
 import styled from "styled-components";
 
-export const Main = styled.div`
-border: 1px solid red;
+export const Container = styled.div`
+  height: 100vh;
+  background-color: #5271FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const NavBarStyle = styled.nav`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30%;
+`;
+
+export const MainContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const VerticalButtons = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 99.5vw;
-    height: 99.5vh;
-    background-color: #5271FF;
-
-    img{
-        width: 40%;
-        height: 20%;
-        margin: 0 0 30% 0;
-    }
-
-`
-
-export const NavBarStyle = styled.div`
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
+    margin-bottom: 20px;
+    height: 40vh;
     justify-content: space-around;
-    width: 90%;
-    height: 20%;
-`
+`;
 
-export const ControlesStyle = styled.div`
-    border: 1px solid blue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 80%;
-    height: 50%;
-`
+export const Image = styled.img`
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  margin: 30% 0 0 0 ;
+`;

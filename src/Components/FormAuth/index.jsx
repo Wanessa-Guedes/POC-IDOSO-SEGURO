@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../App";
+import { Main, LoginForm, Input, Button, LinkStyle, LogoImage } from "./style";
+import idosa from "../../img/avo.png"
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,7 +25,7 @@ export const FormAuth = (props) => {
       handleLogin();
       navigate("/controles");
     } else {
-      toast.error('Dados incorretos')
+      toast.error("Dados incorretos");
       handleLogout();
     }
   };
@@ -38,23 +40,27 @@ export const FormAuth = (props) => {
 
   return (
     <>
-    <ToastContainer/>
-      <form onSubmit={doLogin}>
-        {props.values.map((value) => (
-          <input
-            placeholder={value}
-            required
-            type={value}
-            onChange={changeHandler(value)}
-          ></input>
-        ))}
-        <button type="submit">Enviar</button>
-      </form>
-      {props.type === "login" ? (
-        <Link to="/cadastrar">Não é cadastrado? Clique aqui</Link>
-      ) : (
-        <Link to="/entrar">Já é cadastrado? Clique aqui</Link>
-      )}
+      <Main>
+        <ToastContainer />
+        <LogoImage src={idosa} alt="Idoso sorridente"/>
+        <LoginForm  onSubmit={doLogin}>
+          {props.values.map((value) => (
+            <Input 
+              placeholder={value}
+              required
+              type={value}
+              onChange={changeHandler(value)}
+            ></Input>
+          ))}
+          <Button type="submit">Enviar</Button >
+        </LoginForm >
+        {props.type === "login" ? (
+         <LinkStyle> <Link to="/cadastrar">Não é cadastrado? Clique aqui</Link> </LinkStyle>
+        ) : (
+         <LinkStyle> <Link to="/entrar">Já é cadastrado? Clique aqui</Link></LinkStyle>
+        )}
+        <LinkStyle><Link to="/">Voltar para tela principal</Link> </LinkStyle>
+      </Main>
     </>
   );
 };

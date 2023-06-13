@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import {NavButton} from "./style";
+
 export const NavBar = () => {
   const options = ["Controles da Casa", "Lembretes", "Listas", "Emergências"];
   const navigateOptions = ["/controles", "/lembretes", "/listas", "/emergencias"];
@@ -16,7 +18,7 @@ export const NavBar = () => {
 
   return options.map((option) => (
     <>
-      <button key={option} onClick={() => navegar(option)}>{ option }</button>
+      <NavButton key={option} onClick={() => navegar(option)}>{ option }</NavButton>
     </>
   ));
 };

@@ -1,20 +1,28 @@
 import { NavBar } from "../../Components/NavBar";
 import { ControlesComponents } from "../../Components/Controles";
-import { Main, NavBarStyle, ControlesStyle } from "./style";
-import Idosos from "../../img/casa-de-repouso.png"
+import {
+  Container,
+  NavBarStyle,
+  MainContent,
+  VerticalButtons,
+  Image,
+} from "./style";
+import Idosos from "../../img/casa-de-repouso.png";
 
 export const Controles = () => {
   return (
     <>
-      <Main>
+      <Container>
         <NavBarStyle>
           <NavBar />
         </NavBarStyle>
-        <ControlesStyle>
+        <MainContent>
+          <VerticalButtons>
           <ControlesComponents />
-        </ControlesStyle>
-        <img src={Idosos} alt="Idosos com uma casa ao redor"/>
-      </Main>
+          </VerticalButtons>
+          <Image src={Idosos} alt="Idosos com uma casa ao redor" />
+        </MainContent>
+      </Container>
     </>
   );
 };
