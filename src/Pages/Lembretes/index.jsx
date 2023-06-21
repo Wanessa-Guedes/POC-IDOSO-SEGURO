@@ -1,12 +1,16 @@
 import { LembretesComponents } from "../../Components/Lembretes";
 import { NavBar } from "../../Components/NavBar";
+import { Main, NavBarStyle } from "./style";
 
 export const Lembretes = () => {
-
   return (
     <>
-      <NavBar/>
-      <LembretesComponents />
+      <Main>
+        <NavBarStyle>
+          <NavBar />
+        </NavBarStyle>
+        <LembretesComponents />
+      </Main>
     </>
   );
 };

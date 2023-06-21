@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Main } from "./style";
+import { Button, Form, Input, Main } from "./style";
 
 export const ListaFomr = () => {
   const [lista, setLista] = useState(["Comprar remédio", "Levar lixo"]);
@@ -24,18 +24,18 @@ export const ListaFomr = () => {
           ))}
         </ul>
 
-        <form onSubmit={handleLista}>
+        <Form onSubmit={handleLista}>
           {
-            <input
+            <Input
               placeholder="Adicionar à lista"
               type="text"
               value={inputValue}
               onChange={handleInputChange}
               required
-            ></input>
+            ></Input>
           }
-          <button type="onSubmit">Adicionar</button>
-        </form>
+          <Button type="onSubmit">Adicionar</Button>
+        </Form>
       </Main>
     </>
   );

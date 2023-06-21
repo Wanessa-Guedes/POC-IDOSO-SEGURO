@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { CallButton } from "../CallButton";
-import { Contacts, Main } from "./style";
+import {
+  Button,
+  ContainerList,
+  Form,
+  Input,
+  List,
+  ListItem,
+  Phone,
+  Name
+} from "./style";
 
 export const EmergenciasForm = () => {
   const [emergencias, setEmergencias] = useState([
@@ -30,47 +39,49 @@ export const EmergenciasForm = () => {
 
   return (
     <>
-      <Main>
         <ul>
-          {emergencias.map((e) => (
-            <>
-              <Contacts>
-                <div className="nome">
-                <h5>Nome</h5>
-                <li>{e.nome}</li>
-                </div>
-                <div className="telefone">
-                <h5>Telefone</h5>
-                <li>{e.telefone}</li>
-                </div>
-                <CallButton phone={e.telefone}/>
-              </Contacts>
-            </>
-          ))}
+          <ContainerList>
+            <List>
+            {emergencias.map((e) => (
+              <>
+                <ListItem>
+                  <div className="nome">
+                    <h5>Nome</h5>
+                    <Name>{e.nome}</Name>
+                  </div>
+                  <div className="telefone">
+                    <h5>Telefone</h5>
+                    <Phone>{e.telefone}</Phone>
+                  </div>
+                  <CallButton phone={e.telefone} />
+                </ListItem>
+              </>
+            ))}
+            </List>
+          </ContainerList>
         </ul>
 
-        <form onSubmit={handleLista}>
+        <Form onSubmit={handleLista}>
           {
             <>
-              <input
+              <Input
                 placeholder="Adicionar o nome"
                 type="text"
                 value={inputValueNome}
                 onChange={handleInputChangeNome}
                 required
-              ></input>
-              <input
+              ></Input>
+              <Input
                 placeholder="Adicionar o telefone"
                 type="text"
                 value={inputValueTel}
                 onChange={handleInputChangeTel}
                 required
-              ></input>
+              ></Input>
             </>
           }
-          <button type="onSubmit">Adicionar</button>
-        </form>
-      </Main>
+          <Button type="onSubmit">Adicionar</Button>
+        </Form>
     </>
   );
 };

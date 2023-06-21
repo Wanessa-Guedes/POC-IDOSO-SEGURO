@@ -1,8 +1,10 @@
+import { ButtonList } from "./style"
+
 export const CallButton = ({phone}) => {
 return (<>
     <a href={`tel:${phone}`}>
 
-        <button>Ligar</button>
+        <ButtonList>Ligar</ButtonList>
     </a>
 </>)
 }

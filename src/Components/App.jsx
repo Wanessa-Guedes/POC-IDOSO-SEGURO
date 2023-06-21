@@ -33,7 +33,7 @@ function App() {
             <Route path="/lembretes" element={<Lembretes />} />
             <Route path="/listas" element={<Listas />} />
             <Route path="/emergencias" element={<Emergencias />} />
-            <Route path="/controles-lampada" element={<CamerasComponents/>}/>
+            <Route path="/vigilancia" element={<CamerasComponents/>}/>
           </>
         ) : (
           <>

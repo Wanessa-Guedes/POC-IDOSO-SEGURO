@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import QrScanner from 'react-qr-scanner';
 import { QrScannerComponent } from './QrComponent';
+import { Button } from './style';
 
 export const CameraPage = () => {
     const [qrCode, setQrCode] = useState(false);
@@ -8,7 +8,7 @@ export const CameraPage = () => {
         setQrCode(valor)
     }
   return(<>
-    <button onClick={() => handleCamera(true)}>Deseja adicionar uma câmera?</button>
+    <Button onClick={() => handleCamera(true)}>Deseja adicionar uma câmera?</Button>
     {
         qrCode ? <QrScannerComponent/> : <></>
     }
