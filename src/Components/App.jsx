@@ -5,9 +5,11 @@ import { CamerasComponents } from "../Pages/Cameras";
 import { Controles } from "../Pages/Controles";
 import { Emergencias } from "../Pages/Emergencias";
 import { Home } from "../Pages/Home";
+import { Lampadas } from "../Pages/Lampadas";
 import { Lembretes } from "../Pages/Lembretes";
 import { Listas } from "../Pages/Listas";
 import { Login } from "../Pages/Login";
+import { Sensores } from "../Pages/Sensores";
 import "./App.css";
 
 const AuthContext = createContext();
@@ -34,6 +36,8 @@ function App() {
             <Route path="/listas" element={<Listas />} />
             <Route path="/emergencias" element={<Emergencias />} />
             <Route path="/vigilancia" element={<CamerasComponents/>}/>
+            <Route path="/controles-lampada" element={<Lampadas/>}/>
+            <Route path="/sensores" element={<Sensores/>}/>
           </>
         ) : (
           <>

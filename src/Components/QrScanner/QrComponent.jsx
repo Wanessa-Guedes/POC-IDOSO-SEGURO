@@ -16,7 +16,7 @@ export const QrScannerComponent = () => {
 
   return (
     <div>
-      <h1>Simulação de Acesso a Câmera de Segurança</h1>
+      <h1>Simulação de Acesso</h1>
 
       <QrScanner
         onScan={handleQrCodeScan}

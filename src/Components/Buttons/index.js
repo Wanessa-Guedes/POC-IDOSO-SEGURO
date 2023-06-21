@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 export const Button = ({value}) => {
-    const buttonsNavigate = ["/controles-lampada", "/sensores-movimento", "/vigilancia", "/entrar", "/cadastrar"];
+    const buttonsNavigate = ["/controles-lampada", "/sensores", "/vigilancia", "/entrar", "/cadastrar"];
     const buttonsValue = ["Controles de Lâmpada", "Sensores de Movimento", "Vigilância", "Entrar", "Cadastrar"];
     const navigate = useNavigate();
   

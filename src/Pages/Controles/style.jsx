@@ -13,6 +13,7 @@ export const NavBarStyle = styled.nav`
   display: flex;
   justify-content: center;
   margin-bottom: 30%;
+  width: 90%;
 `;
 
 export const MainContent = styled.div`
@@ -36,3 +37,4 @@ export const Image = styled.img`
   object-fit: cover;
   margin: 30% 0 0 0 ;
 `;
+

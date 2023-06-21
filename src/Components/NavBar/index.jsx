@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import {NavButton} from "./style";
+import {Img, NavButton} from "./style";
+import { useAuth } from "../App";
+import logoutImage from "../../img/logout.png";
 
 export const NavBar = () => {
   const options = ["Controles da Casa", "Lembretes", "Listas", "Emergências"];
@@ -16,9 +18,20 @@ export const NavBar = () => {
       }
     }
 
-  return options.map((option) => (
+    const { handleLogout } = useAuth();
+
+    const logout = () => {
+      handleLogout();
+    }
+
+  return (<>
+  
+ <Img src={logoutImage} onClick={() => logout()}/>
+  
+  {options.map((option) => (
     <>
       <NavButton key={option} onClick={() => navegar(option)}>{ option }</NavButton>
     </>
-  ));
+  ))}
+  </>);
 };

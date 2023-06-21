@@ -8,3 +8,8 @@ export const NavButton = styled.button`
   border: none;
   margin: 0 10px;
 `;
+
+export const Img = styled.img`
+  width: 10%;
+  background-color: white;
+`
